@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photobooth Strip</title>
+  <title>Photobooth</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="photobooth-container">
-    <video id="camera" autoplay></video>
-    <div class="buttons">
-      <button id="snap">Take Photo</button>
-      <button id="retake" style="display:none;">Retake</button>
-    </div>
-    <canvas id="final-strip" width="300" height="1200"></canvas>
-    <a id="download-link" style="display:none;">Download Strip</a>
+
+  <div id="photobooth">
+    <video id="video" autoplay></video>
+    <img id="sticker" src="sticker.png" alt="sticker">
+    <canvas id="canvas" style="display:none;"></canvas>
+  </div>
+
+  <div id="controls">
+    <label for="interval">Select Interval:</label>
+    <select id="interval">
+      <option value="1000">1 Second</option>
+      <option value="2000">2 Seconds</option>
+      <option value="5000" selected>5 Seconds</option>
+    </select>
+    <button id="startBtn">Start!</button>
+    <a id="downloadLink" download="photobooth.png">Download</a>
   </div>
 
   <script src="script.js"></script>

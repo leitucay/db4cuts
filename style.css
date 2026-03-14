@@ -1,61 +1,29 @@
-/* Import a modern Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a1a, #333);
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0 20px;
-}
-
 .photobooth-container {
   text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
 video {
-  border: 5px solid #ff4081;
+  border: 4px solid #ff4081;
   border-radius: 12px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  max-width: 300px;
 }
 
 button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  font-size: 16px;
+  margin-top: 15px;
+  padding: 10px 20px;
   font-weight: 600;
   border: none;
   border-radius: 8px;
   background: linear-gradient(90deg, #ff4081, #ff80ab);
   color: #fff;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255,64,129,0.6);
-}
-
-#final-strip img {
+canvas {
   margin-top: 20px;
   border: 3px solid #ff4081;
   border-radius: 12px;
-  width: 200px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  transition: transform 0.2s;
-}
-
-#final-strip img:hover {
-  transform: scale(1.05);
 }

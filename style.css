@@ -1,28 +1,29 @@
-/* Modern clean photobooth styling with white background */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #fff; /* Pure white background */
+  background: #fff;
   font-family: 'Poppins', sans-serif;
   margin: 0;
 }
 
 .photobooth-container {
   text-align: center;
-  background: #fff; /* Container also white */
+  background: #fff;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Soft shadow for depth */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 video {
-  border: 3px solid #333; /* Dark border for contrast */
+  border: 3px solid #333;
   border-radius: 12px;
   max-width: 300px;
   display: block;
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto;
 }
 
 button {
@@ -31,7 +32,7 @@ button {
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background: #333; /* Dark minimal button */
+  background: #333;
   color: #fff;
   cursor: pointer;
   transition: transform 0.2s, background 0.2s;
@@ -49,4 +50,14 @@ canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+#download-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #fff;
+  background: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
 }

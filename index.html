@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Photobooth</title>
+<title>Photobooth Strip</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Photobooth</h1>
+<h1>Photobooth Strip</h1>
 
 <div id="photostrip">
   <video id="video" width="400" height="300" autoplay></video>
-  <img id="sticker" src="sticker.png" width="400" height="300" />
+  <img id="sticker" src="sticker1.png" width="400" height="300" />
 </div>
 
-<canvas id="canvas" width="400" height="300" style="display:none;"></canvas>
+<canvas id="canvas" width="400" height="1200" style="display:none;"></canvas>
 
 <div id="controls">
   <button id="startButton">Start Camera</button>
   <button id="takeButton">Take Photo</button>
-  <a id="downloadLink" download="photostrip.png">Download</a>
+  <button id="retakeButton" style="display:none;">Retake</button>
+  <a id="downloadLink" download="photostrip.png" style="display:none;">Download Photostrip</a>
 </div>
 
 <script src="script.js"></script>

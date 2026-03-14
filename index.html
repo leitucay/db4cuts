@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photobooth</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photobooth</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="photobooth">
-    <video id="video" autoplay></video>
-    <img id="sticker" src="sticker.png" alt="sticker">
-    <canvas id="canvas" style="display:none;"></canvas>
-  </div>
+<h1>Photobooth</h1>
 
-  <div id="controls">
-    <label for="interval">Select Interval:</label>
-    <select id="interval">
-      <option value="1000">1 Second</option>
-      <option value="2000">2 Seconds</option>
-      <option value="5000" selected>5 Seconds</option>
-    </select>
-    <button id="startBtn">Start!</button>
-    <a id="downloadLink" download="photobooth.png">Download</a>
-  </div>
+<div id="photostrip">
+  <video id="video" width="400" height="300" autoplay></video>
+  <img id="sticker" src="sticker.png" width="400" height="300" />
+</div>
 
-  <script src="script.js"></script>
+<canvas id="canvas" width="400" height="300" style="display:none;"></canvas>
+
+<div id="controls">
+  <button id="startButton">Start Camera</button>
+  <button id="takeButton">Take Photo</button>
+  <a id="downloadLink" download="photostrip.png">Download</a>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

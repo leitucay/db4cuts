@@ -1,50 +1,34 @@
 body {
   font-family: sans-serif;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  background-color: #fff;
-}
-
-#photobooth {
-  position: relative;
-  width: 480px;
-  height: 360px;
+  background: #f2f2f2;
 }
 
 video, canvas {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  object-fit: cover;
+  border: 2px solid #333;
+  margin-bottom: 10px;
+}
+
+#controls {
+  margin: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#photostrip {
+  position: relative;
 }
 
 #sticker {
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px;
   pointer-events: none;
-}
-
-#controls {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#startBtn {
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#downloadLink {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
 }

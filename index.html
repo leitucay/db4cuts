@@ -1,66 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Simple Photobooth Site</title>
-    <link rel="stylesheet" href="/extern/bootstrap.min.css">
-    <link href="/main.css" rel="stylesheet">
-    <script src="/extern/adapter.js"></script>
-    <script src="extern/jquery-2.2.1.min.js"></script>
-    <script src="/main.js"></script>
-    <script>window.onload = init;</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photobooth</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="countdown"></div>
-<div class="container-fluid">
-    <header>Newspaper Photobooth</header>
-    <div class="row">
-        <div class="col-lg-6">
-            <video id="webcam-video" autoplay></video>
-        </div>
-        <div class="col-lg-5 col-lg-offset-1" id="preview">
-            <canvas></canvas>
-            <br>
-            <!-- Form that must be filled out to print -->
-            <input class="form-control"
-                   id="emailAddress" placeholder="Email">
-            <input class="form-control"
-                   id="username" placeholder="Name">
-            <!--
-            Print:
-            <select id="printSet">
-                <option value="1">DO NOT PRINT</option>
-                <option value="2">Image Only</option>
-                <option value="3">Newspaper Layout</option>
-            </select><br>-->
 
-            <textarea class="form-control" placeholder="Comments"
-                      id="notes"></textarea>
-            <textarea class="form-control" placeholder="Image Caption"
-                    id="caption"></textarea>
-            <button id="usePicture">Use This Picture</button>
-            <button id="clearForm">Clear the Form</button>
-            <br>
-            <p>If you want to send the created newletter to multiple people you can seperate the emails with a
-                comma.</p>
-            <p>When you finish filling out the fields, please click the "Use This Picture" Button.</p>
-            <p>These fields are used to send the photo to the printer. It might take a while for the printer
-                to print it, because it is emailed to the printer.</p>
-            <p>Remember it might take a while for the confirmation dialog to pop up, about the message being sent
-                successfully.</p>
-        </div>
+  <div id="photobooth">
+    <video id="video" autoplay></video>
+    <img id="sticker" src="sticker.png" alt="sticker">
+    <canvas id="canvas" style="display:none;"></canvas>
+  </div>
 
-    </div><!-- .row -->
-    <div class="row">
-        <div class="col-lg-5">
-            <p>This system will generate pretty newspaper formatted photos for people at Grandmom's party.
-                When you press the take photo button, a countdown will start. When it finishes a picture will
-                be taken.</p>
-        </div>
-        <div class="col-lg-2">
-            <button id="takePicture">Take Picture</button>
-        </div>
-    </div><!-- .row -->
-</div><!-- .container -->
+  <div id="controls">
+    <label for="interval">Select Interval:</label>
+    <select id="interval">
+      <option value="1000">1 Second</option>
+      <option value="2000">2 Seconds</option>
+      <option value="5000" selected>5 Seconds</option>
+    </select>
+    <button id="startBtn">Start!</button>
+    <a id="downloadLink" download="photobooth.png">Download</a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

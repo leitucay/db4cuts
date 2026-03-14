@@ -1,32 +1,29 @@
+const startButton = document.getElementById('startButton');
+const takeButton = document.getElementById('takeButton');
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-const sticker = document.getElementById('sticker');
-const startBtn = document.getElementById('startBtn');
-const intervalSelect = document.getElementById('interval');
 const downloadLink = document.getElementById('downloadLink');
+const sticker = document.getElementById('sticker');
 
-// Start webcam
-navigator.mediaDevices.getUserMedia({ video: true })
-  .then(stream => { video.srcObject = stream; })
-  .catch(err => console.error(err));
+let stream;
 
-startBtn.addEventListener('click', () => {
-  const interval = parseInt(intervalSelect.value);
-  capturePhoto();
-  setTimeout(capturePhoto, interval);
+// Start Camera
+startButton.addEventListener('click', async () => {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    video.srcObject = stream;
+  } catch (err) {
+    console.error('Cannot access webcam:', err);
+    alert('Please allow camera access.');
+  }
 });
 
-function capturePhoto() {
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+// Take Photo
+takeButton.addEventListener('click', () => {
   const ctx = canvas.getContext('2d');
-
-  // Draw video
-  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-  // Draw sticker
-  ctx.drawImage(sticker, 0, 0, sticker.width, sticker.height);
-
-  // Update download link
-  downloadLink.href = canvas.toDataURL('image/png');
-}
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height); // draw video
+  ctx.drawImage(sticker, 0, 0, canvas.width, canvas.height); // draw sticker
+  canvas.style.display = 'block';
+  const dataURL = canvas.toDataURL('image/png');
+  downloadLink.href = dataURL;
+});

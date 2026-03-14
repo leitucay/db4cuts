@@ -9,7 +9,10 @@
 <body>
   <div class="photobooth-container">
     <video id="camera" autoplay></video>
-    <button id="snap">Take Photo</button>
+    <div class="buttons">
+      <button id="snap">Take Photo</button>
+      <button id="retake" style="display:none;">Retake</button>
+    </div>
     <canvas id="final-strip" width="300" height="1200"></canvas>
     <a id="download-link" style="display:none;">Download Strip</a>
   </div>

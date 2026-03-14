@@ -51,20 +51,35 @@ takeButton.addEventListener('click', () => {
   }
 });
 
-// Create final photostrip
 function createPhotostrip() {
   const ctx = canvas.getContext('2d');
-  canvas.height = 300 * photos.length;
-  canvas.style.display = 'block';
 
-  photos.forEach((photoCanvas, index) => {
-    ctx.drawImage(photoCanvas, 0, index * 300);
-  });
+  // Load your photostrip design
+  const design = new Image();
+  design.src = 'photostrip_template.png'; // your photostrip design
+  design.onload = () => {
+    // Make canvas same size as design
+    canvas.width = design.width;
+    canvas.height = design.height;
 
-  takeButton.style.display = 'none';
-  retakeButton.style.display = 'inline-block';
-  downloadLink.style.display = 'inline-block';
-  downloadLink.href = canvas.toDataURL('image/png');
+    // Draw the background design first
+    ctx.drawImage(design, 0, 0, canvas.width, canvas.height);
+
+    // Draw each captured photo onto the design
+    // Here we assume photos should be positioned at y = 0, 300, 600, 900
+    photos.forEach((photoCanvas, index) => {
+      const x = 0; // adjust if you want margin from left
+      const y = index * 300; // adjust according to your design
+      ctx.drawImage(photoCanvas, x, y, 400, 300);
+    });
+
+    // Show canvas & download
+    canvas.style.display = 'block';
+    takeButton.style.display = 'none';
+    retakeButton.style.display = 'inline-block';
+    downloadLink.style.display = 'inline-block';
+    downloadLink.href = canvas.toDataURL('image/png');
+  }
 }
 
 // Retake option

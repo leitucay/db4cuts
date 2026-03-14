@@ -5,7 +5,7 @@ const captureButton = document.getElementById('capture');
 
 // Load photostrip template
 const template = new Image();
-template.src = 'photostrip-template.png'; // your template with transparent area
+template.src = 'dustinphotobooth.png'; // your template with transparent area
 
 // Start webcam
 navigator.mediaDevices.getUserMedia({ video: true })
